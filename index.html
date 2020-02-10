@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="index.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap" rel="stylesheet">
+
+    <title>DHS One</title>
+  </head>
+  <body>
+    
+    <div class="container text-justify main-container">
+
+        <center>
+            <h1>
+                <b>A Mobile Based Inventory Management System Using QR Code Application</b>
+            </h1><br>
+            <h4>
+                Daniel Mark, Pon Rahul, Alex Ezhil Arasu, Sharath Devasahayam, Swana Simran, Pooja Krishan<br>
+            </h4>
+            <h3 class="font-weight-bold">Brains of Castamere</h3>
+        </center>
+
+        <br><br><br>
+        
+        <p>
+            <h3>
+                <b>
+                    I.	The Problem
+                </b>
+            </h3><br>
+            A mobile application is required that is capable of<br>a.) Having all the details of the equipment like S/N, Date of Installation etc. by scanning a QR code/ barcode.<br>b.) Readily accessing the past service record by scanning a QR code/ barcode.<br>c.) Entering the details and updating service history on the spot, just after maintenance.
+        </p>
+        <br><br>
+        
+
+        <h3>
+            <b>II.	PROPOSED IDEA</b>
+        </h3><br>
+        <h4>
+            <b>A. Key Points</b>
+        </h4><br>
+        <ul>
+            <li>
+                A cross-platform web app that runs on Android, iOS, Windows and Chrome OS phones as well as any browser.
+            </li>
+            <li>
+                Scan & generate QR/barcodes with equipment ID & use them to view past service record and details about the equipment.
+            </li>
+            <li>
+                App will also contain a list of jobs that each maintenance personnel has to do within a timeframe and live reporting with feedback to admin/manager is also built into it.
+            </li>
+            <li>
+                A browser-based dashboard that local admins can use to monitor, update, delete, add data and also visualize projected costs for specific maintenance cases and generate automated reports.
+            </li>
+        </ul>
+
+        <br><br>
+
+        <h4>
+            <b>B. Our Process</b>
+        </h4><br>
+
+        <div class="d-flex justify-content-center mb-4">
+            <img src="process.png" alt="Process Diagram">
+        </div>
+        
+        <br><br>
+        <h3>
+            <b>III. TECHNOLOGY STACK</b>
+        </h3>
+        <br>
+
+        <h4>
+            <b>A. Smartphone Apps</b>
+        </h4><br>
+
+        <ul class="list-unstyled">
+            <li class="media">
+                <img src="html.png" class="mr-3 media-images" alt="HTML Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">HTML5</h5>
+                    HTML5 will be used as our markup language to render the front-end of the app with Bootstrap 4.3.3 as the framework that'll handle responsiveness across different screen sizes.
+                </div>
+            </li>
+            <li class="media my-4">
+                <img src="css.png" class="mr-3 media-images" alt="CSS Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">CSS3</h5>
+                    CSS3 will be used to style elements across our front-ends. Most style classes will come off of the Bootstrap bundle embedded inside the app.
+                </div>
+            </li>
+            <li class="media">
+                <img src="js.png" class="mr-3 media-images" alt="JavaScript Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">JavaScript</h5>
+                    JavaScript is our front-end scripting language and is responsible for dynamically rendering almost all content the user sees within the app.
+                </div>
+            </li>
+            <br>
+            <li class="media">
+                <img src="jquery.png" class="mr-3 media-images" alt="jQuery Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">jQuery</h5>
+                    jQuery will help make asynchronous requests to our backend and load dynamic content on our pages without having to reload the page.
+                </div>
+            </li>
+            <br>
+            <li class="media">
+                <img src="cordova.png" class="mr-3 media-images" alt="Cordova Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">Apache Cordova</h5>
+                    Apache Cordova is an open-source framework that can package web based apps and convert them into Android, iOS, Windows and Chrome OS apps. This is the framework that we will use to generate all our apps.
+                </div>
+            </li>
+        </ul>
+
+        <br>
+        <br>
+        <h4>
+            <b>B. Backend infrastructure</b>
+        </h4><br>
+
+        <ul class="list-unstyled">
+            <li class="media">
+                <img src="nginx.png" class="mr-3 media-images" alt="Nginx Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">Nginx</h5>
+                    Since each airport's inventory infrastructure will be air-gapped for maximum security, the apps we build will work only inside the airport's LAN & WLAN. In order for officials at HQ in New Delhi to be able to tap into each individual airport's database, we route any incoming requests from HQ via a private Nginx reverse-proxy to the requested airport server. All other requests from the outside internet to an airport's server will be blocked by our pfSense<sup>TM</sup> firewall.
+                </div>
+            </li>
+            <li class="media my-4">
+                <img src="http.png" class="mr-3 media-images" alt="Apache HTTP Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">Apache HTTP Server</h5>
+                    Each individual airport's server will run an Apache HTTP server that will allow requests coming in from our private Nginx reverse-proxy.
+                </div>
+            </li>
+            <li class="media">
+                <img src="php.png" class="mr-3 media-images" alt="PHP Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">PHP</h5>
+                    PHP will be the server-side scripting language used to program our API layer that will receive requests from our smartphone apps and the dashboard.
+                    <br>
+                    <br>
+                    <h4>Why PHP?</h6>
+                    <ul>
+                        <li>It is 3 times faster than Python.</li>
+                        <li>PHP requires minimal coding knowledge so finding a maintenance personnel to maintain the code later on will be cheap and easy.</li>
+                        <li>PHP when used with PDO to make CRUD requests to our database is safer than any other way of accessing a database.</li>
+                    </ul>
+                </div>
+            </li>
+            <br>
+            <li class="media">
+                <img src="sql.png" class="mr-3 media-images" alt="Mariadb Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">MariaDB</h5>
+                    MariaDB server will be used to store all our data in structured relational databases. MyISAM and InnoDB storage engines will be used on tables depending on what type pof data is being stored.
+                </div>
+            </li>
+            <br>
+            <li class="media">
+                <img src="docker.png" class="mr-3 media-images" alt="Docker Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">Docker</h5>
+                    Docker will be used to containerize all our backend services on the server. Containers are light and can be deployed in seconds. In case an update has to be made to a single service, all other services can continue to run while only that particular service's docker image is deployed. Upon deployment of the new image, the old image can be killed. This ensures 0 downtime and has your systems up and running 24x7, 365 days a week.
+                </div>
+            </li>
+            <br>
+            <li class="media">
+                <img src="centos.png" class="mr-3 media-images" alt="Docker Logo">
+                <div class="media-body">
+                <h5 class="mt-0 mb-1">CentOS</h5>
+                    CentOS, one of the most popular Linux-based server operating systems in the industry will run on all hardware. CentOS has been proven to be relliable and stable even under heavy loads. Apart from this, CentOS also provides really strong protection against many known vulnerabilities and has several safety mechanisms built into it. 
+                </div>
+            </li>
+        </ul>
+
+        <br><br>
+        <h3>
+            <b>V. ARCHITECTURE DIAGRAM</b>
+        </h3>
+        <br>
+        <img src="arch.png" alt="" style="width: 100%;">
+
+        <br><br>
+        <h3>
+            <b>VI. FEATURES</b>
+        </h3>
+        <br>
+
+       <ul>
+           <li>
+                Scalable and has zero downtime.
+            </li>
+           <li>
+                Mobile apps can scan QR codes and barcodes that are unique to each equipment.
+           </li>
+           <li>
+                Details such as S/N , Equipment ID , Date of Installation, Equipment type, etc. for that equipment could be viewed immediately and can also be accessed from the dashboard.
+           </li>
+           <li>
+                Service history and maintenance details can also be updated on the spot via mobile app.
+           </li>
+           <li>
+                Admin can also use the dashboard to view, update, add, delete details.
+           </li>
+           <li>
+                Data analysis and estimation of repair costs can also be dynamically calculated through the dashboard.
+           </li>
+           <li>
+                Automatic report and work log generation.
+           </li>
+           <li>
+                The HQ in New Delhi has a common dashboard to access all information from airport servers across India.
+           </li>
+       </ul>
+
+        <br>
+        <br>
+        <div class="d-flex justify-content-center">**********</div>
+
+        <br><br>
+        <br><br>
+
+
+
+    </div><!-- end of main container -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
